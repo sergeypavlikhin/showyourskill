@@ -1,0 +1,35 @@
+.col-1 {
+    width: 135px;
+}
+
+.col-2 {
+    width: 270px;
+}
+
+.col-3 {
+    width: 405px;
+}
+
+.col-4 {
+    width: 540px;
+}
+
+.col-5 {
+    width: 675px;
+}
+
+.col-6 {
+    width: 810px;
+}
+
+.col-8 {
+    width: 1080px;
+}
+
+.col-10 {
+    width: 1350px;
+}
+
+.col-12 {
+    width: 1620px;
+}
