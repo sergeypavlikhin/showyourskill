@@ -271,7 +271,7 @@
                 <div class="row input-wrapper">
                     <div class="col-md-6 col-md-offset-3">
                         <input type="text" name="first_name" placeholder="Как тебя зовут?"><br>
-                        <label class="ask">На <a href="#">вы</a>, пожалуйста</label>
+                        <label class="ask">На <a href="javascript:switchText()">вы</a>, пожалуйста</label>
                     </div>
                 </div>
                 <div class="row  input-wrapper ">
@@ -280,7 +280,7 @@
                     </div>
                 </div>
                 <div class="row btn-wrapper">
-                    <button class="col-md-2 col-md-offset-5 action-btn ii">
+                    <button class="col-md-2 col-md-offset-5 action-btn ii" onclick="alert('Окей, свяжемся позже');">
                         Готов
                     </button>
                 </div>
@@ -301,12 +301,33 @@
         </footer>
         <script src="js/bootstrap.min.js"></script>
         <script>
+
+            var naTi = true;
+
             $("button").click(function() {
                 $('html, body').animate({
                     scrollTop: $("#form").offset().top - 100
                 }, 2000);
             });
 
+            function switchText() {
+                naTi = !naTi;
+                processText();
+            }
+
+            function processText() {
+                if(naTi){
+                    $('.form h2').html('Ты готов?');
+                    $('.ask a').html('вы');
+                    $("input[name='first_name']").attr("placeholder", "Как тебя зовут?");
+                    $('.form-description > div').html('Тогда оставь свои контактные<br>данные и мы свяжемся с тобой');
+                }else{
+                    $('.form h2').html('Вы готовы?');
+                    $('.ask a').html('ты');
+                    $("input[name='first_name']").attr("placeholder", "Как к вам обращаться?");
+                    $('.form-description > div').html('Тогда оставьте свои контактные<br>данные и мы свяжемся с вами');
+                }
+            }
 
         </script>
     </body>
